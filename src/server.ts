@@ -17,9 +17,9 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
   // @TODO1 IMPLEMENT A RESTFUL ENDPOINT
   // GET /filteredimage?image_url={{URL}}
-  app.get("/filteredimage", async (req,res)=>{
+  app.get("/filteredimage", async (req:express.Request,res:express.Response)=>{
    // init file variable
-    let file;
+    let file: string;
     //1. validate the image_url query
     if(req.query.image_url){
       // 2. call filterImageFromURL(image_url) to filter the image
@@ -37,7 +37,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   
   // Root Endpoint
   // Displays a simple message to the user
-  app.get( "/", async ( req, res ) => {
+  app.get( "/", async ( req:express.Request, res:express.Response ) => {
     res.send("try GET /filteredimage?image_url={{}}")
   } );
   
